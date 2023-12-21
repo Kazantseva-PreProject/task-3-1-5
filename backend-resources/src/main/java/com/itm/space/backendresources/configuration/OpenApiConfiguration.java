@@ -6,8 +6,6 @@ import io.swagger.v3.oas.annotations.security.OAuthFlow;
 import io.swagger.v3.oas.annotations.security.OAuthFlows;
 import io.swagger.v3.oas.annotations.security.OAuthScope;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;
-import io.swagger.v3.oas.models.OpenAPI;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -27,8 +25,8 @@ import org.springframework.context.annotation.Configuration;
 )
 public class OpenApiConfiguration {
 
-    @Bean
-    public OpenAPI publicApi() {
-        return new OpenAPI();
-    }
+//    @Bean
+//    public OpenAPI publicApi() {
+//        return new OpenAPI();
+//    }
 }
