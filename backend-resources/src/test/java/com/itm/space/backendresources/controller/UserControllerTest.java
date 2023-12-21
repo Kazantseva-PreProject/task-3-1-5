@@ -1,4 +1,4 @@
-package com.itm.space.backendresources.controllers;
+package com.itm.space.backendresources.controller;
 
 import com.itm.space.backendresources.BaseIntegrationTest;
 import com.itm.space.backendresources.api.request.UserRequest;
@@ -23,10 +23,10 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-
 @ExtendWith(MockitoExtension.class)
 @WithMockUser(roles = "MODERATOR")
-public class UserControllerTest extends BaseIntegrationTest {
+class UserControllerTest extends BaseIntegrationTest {
+
     @MockBean
     private UserService userService;
     private static UserRequest testUserRequest;
@@ -34,8 +34,8 @@ public class UserControllerTest extends BaseIntegrationTest {
 
     @BeforeAll
     public static void setupOnce() {
-        testUserResponse = new UserResponse("Ivan", "Vitvinov", "ivan@gmail.com", List.of("user"), List.of("users"));
-        testUserRequest = new UserRequest("dao", "ivan@gmail.com", "12345", "Ivan", "Vitvinov");
+        testUserResponse = new UserResponse("Ivan", "Ivanov", "ivan@gmail.com", List.of("user"), List.of("users"));
+        testUserRequest = new UserRequest("dao", "ivan@gmail.com", "12345", "Ivan", "Ivanov");
     }
 
     @Test
@@ -58,6 +58,9 @@ public class UserControllerTest extends BaseIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.email").value(testUserRequest.getEmail()));
     }
+//я думаю может версию спринга поменять на ниже?ок)спасибо огромное за помощь) загугли ошибку, я потом могу ещё посмотреть) после занятия своего-напиши время когда к тебе постучать давай в 21?если я с сергеем не сойдусь в это время-напишу)спасибо
+
+
 
     @Test
     void helloTest() throws Exception {
